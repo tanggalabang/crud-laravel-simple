@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\mahasiswaController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,5 +20,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-// Route::resource('mahasiswa', mahasiswaController::class);
-Route::resource('siswa', SiswaController::class);
+Route::group(['middleware' => 'authMiddleware'], function(){
+    Route::resource('mahasiswa', mahasiswaController::class);
+    Route::get('logout', [AuthController::class, 'logout']);
+});
+Route::get('/', [AuthController::class, 'showLogin']);
+Route::post('login', [AuthController::class, 'login']);

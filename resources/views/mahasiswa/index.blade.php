@@ -1,6 +1,8 @@
 @extends('my-layout.template')
 <!-- START DATA -->
 @section('konten')    
+<a href="{{url('logout') }}" class="btn btn-danger">Logout</a>
+
 <div class="my-3 p-3 bg-body rounded shadow-sm">
     <!-- FORM PENCARIAN -->
     <div class="pb-3">

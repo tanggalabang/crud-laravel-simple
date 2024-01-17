@@ -2,6 +2,7 @@
 <!-- START DATA -->
 @section('konten')    
 <div class="my-3 p-3 bg-body rounded shadow-sm">
+
     <!-- FORM PENCARIAN -->
     <div class="pb-3">
         <form class="d-flex" action="{{ url('siswa') }}" method="get">
